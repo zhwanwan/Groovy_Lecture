@@ -30,10 +30,46 @@ println x_1.class
 println("---------------------------")
 
 
-//String类型
+//------------String类型-------------------
 def str = 'a single string' //用单引号定义一个string
-def str1 = 'Tom\'s\' cat'   //转义字符'
+def str1 = 'Tom\'s cat'   //转义字符'
 println(str.class)
 println str1
-def tripleName = '''three single string''' //三引号字符串
+def tripleName = '''\
+line one
+line two
+line three''' //三引号字符串,
 println(tripleName)
+println("---------------------------")
+//双引号的字符串--可扩展的字符串
+def doubleName = "this is a common string"
+def grv = "Groovy"
+def hello = "Hello : ${grv}"
+println hello
+println hello.class
+def sum = "2 + 3 = ${2 + 3}" //可扩展任意的表达式
+//println(sum)
+
+String echo(String message) {
+    return message
+}
+def result = echo(sum)
+println result
+println(result.class)
+
+/*============字符串方法============*/
+def test = "Hello groovy"
+println test.center(8,'a')
+println test.padLeft(8,'a')
+
+def test1 = 'Hello'
+println test > test1
+
+println test[0]
+println test1[0..1]
+
+println test.minus(test1)
+println test - test1
+
+println test1.reverse().capitalize()
+println test.isNumber()
